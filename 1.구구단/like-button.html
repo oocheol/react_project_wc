@@ -7,7 +7,7 @@
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <!--<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>-->
 <!--<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>-->
-<script>
+<script type="text/babel">
   'use strict';
 
   const e = React.createElement;
@@ -15,7 +15,7 @@
   class LikeButton extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {liked: false};
+      this.state = {liked: false}; // data
     }
 
     render() {
@@ -23,12 +23,18 @@
         return 'You liked this.';
       }
 
-      return e('button', {onClick: () => this.setState({liked: true})}, 'Like');
+      // return e('button', {onClick: () => this.setState({liked: true})}, 'Like'); // 화면
+        return (
+            <button onClick={() => this.setState({liked: true})}>
+                Like
+            </button>
+        )
     }
   }
 </script>
-<script>
-  ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+<script type="text/babel">
+  // ReactDOM.render(e(LikeButton), document.querySelector('#root'));
+  ReactDOM.render(document.querySelector('#root')).render(<LikeButton/>);
 </script>
 </body>
 </html>
