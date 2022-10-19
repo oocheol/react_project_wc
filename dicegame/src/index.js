@@ -1,10 +1,7 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
-const product = '맥북';
 
-ReactDOM.render(
-        <h1>나만의 {product} 주문하기</h1>
-        ,
-    document.getElementById('root')
-);
+
+ReactDOM.render(<App/>, document.getElementById('root'));
